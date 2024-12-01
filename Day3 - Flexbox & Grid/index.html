@@ -6,5 +6,88 @@
     <title>Flexbox and Gridbox</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        Header
+        <a
+          href="#"
+          data-src="https://education.github.com/git-cheat-sheet-education.pdf"
+          >Git CheatSheet</a
+        >
+        <a
+          href="#"
+          data-src="https://www.codewithharry.com/blogpost/css-cheatsheet/"
+          >CSS CheatSheet</a
+        >
+        <a
+          href="#"
+          data-src="https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf"
+          >HTML CheatSheet</a
+        >
+      </div>
+      <div class="sidepanel">
+        Sidepanel
+
+        <a
+          href="#"
+          data-src="https://education.github.com/git-cheat-sheet-education.pdf"
+          >Git CheatSheet</a
+        >
+
+        <a
+          href="#"
+          data-src="https://www.codewithharry.com/blogpost/css-cheatsheet/"
+          >CSS CheatSheet</a
+        >
+
+        <a
+          href="#"
+          data-src="https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf"
+          >HTML CheatSheet</a
+        >
+      </div>
+      <div class="mainpanel">
+        <iframe
+          id="content-frame"
+          src="https://education.github.com/git-cheat-sheet-education.pdf"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <div class="footer">
+        Footer
+        <a
+          href="#"
+          data-src="https://education.github.com/git-cheat-sheet-education.pdf"
+          >Git CheatSheet</a
+        >
+        <a
+          href="#"
+          data-src="https://www.codewithharry.com/blogpost/css-cheatsheet/"
+          >CSS CheatSheet</a
+        >
+        <a
+          href="#"
+          data-src="https://web.stanford.edu/group/csp/cs21/htmlcheatsheet.pdf"
+          >HTML CheatSheet</a
+        >
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll("a[data-src]");
+      const iframe = document.getElementById("content-frame");
+
+      links.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const newSrc = link.getAttribute("data-src");
+          iframe.src = newSrc;
+        });
+      });
+    });
+  </script>
 </html>
